@@ -20,12 +20,14 @@ public struct BarChartCell: View {
                  index: Int = 0,
                  width: Float,
                  numberOfDataPoints: Int,
+                 animationDuration: Double,
                  gradientColor: ColorGradient,
                  touchLocation: CGFloat) {
         self.value = value
         self.index = index
         self.width = width
         self.numberOfDataPoints = numberOfDataPoints
+        self.animationDuration = animationDuration
         self.gradientColor = gradientColor
         self.touchLocation = touchLocation
     }
