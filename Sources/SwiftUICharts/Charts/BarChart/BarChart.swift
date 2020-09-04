@@ -6,7 +6,7 @@ public struct BarChart: View, ChartBase {
 
     @EnvironmentObject var data: ChartData
     @EnvironmentObject var style: ChartStyle
-    @EnvironmentObject var animation: ChartAnimation = ChartAnimation()
+    @EnvironmentObject var animation: ChartAnimation
 
 	/// The content and behavior of the `BarChart`.
 	///
