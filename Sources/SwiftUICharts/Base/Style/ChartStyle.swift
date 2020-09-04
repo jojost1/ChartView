@@ -17,6 +17,7 @@ public class ChartStyle: ObservableObject {
     public init(backgroundColor: Color, foregroundColor: [ColorGradient], animationDuration: Double = 2.0) {
         self.backgroundColor = ColorGradient.init(backgroundColor)
         self.foregroundColor = foregroundColor
+        self.animationDuration = animationDuration
     }
 
 	/// Initialize with a single background color and a single `ColorGradient` for the foreground
@@ -26,6 +27,7 @@ public class ChartStyle: ObservableObject {
     public init(backgroundColor: Color, foregroundColor: ColorGradient, animationDuration: Double = 2.0) {
         self.backgroundColor = ColorGradient.init(backgroundColor)
         self.foregroundColor = [foregroundColor]
+        self.animationDuration = animationDuration
     }
 
 	/// Initialize with a single background `ColorGradient` and a single `ColorGradient` for the foreground
@@ -35,6 +37,7 @@ public class ChartStyle: ObservableObject {
     public init(backgroundColor: ColorGradient, foregroundColor: ColorGradient, animationDuration: Double = 2.0) {
         self.backgroundColor = backgroundColor
         self.foregroundColor = [foregroundColor]
+        self.animationDuration = animationDuration
     }
 
 	/// Initialize with a  single background `ColorGradient` and an array of `ColorGradient` for the foreground
@@ -44,6 +47,7 @@ public class ChartStyle: ObservableObject {
     public init(backgroundColor: ColorGradient, foregroundColor: [ColorGradient], animationDuration: Double = 2.0) {
         self.backgroundColor = backgroundColor
         self.foregroundColor = foregroundColor
+        self.animationDuration = animationDuration
     }
     
 }
