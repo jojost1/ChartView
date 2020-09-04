@@ -46,7 +46,7 @@ public struct BarChartCell: View {
             self.firstDisplay = true
         }
         .transition(.slide)
-        .animation(Animation.spring().delay(self.touchLocation < 0 || !firstDisplay ? Double(self.index) * 0.04 : 0))
+        .animation(Animation.spring().delay(self.touchLocation < 0 || !firstDisplay ? Double(self.index) * (2.0/Double(self.numberOfDataPoints)) : 0))
     }
 }
 

@@ -36,7 +36,7 @@ public struct BarChartRow: View {
                                      gradientColor: self.style.foregroundColor.rotate(for: index),
                                      touchLocation: self.touchLocation)
                             .scaleEffect(self.getScaleSize(touchLocation: self.touchLocation, index: index), anchor: .bottom)
-                            .animation(Animation.easeIn(duration: 0.05))
+                            .animation(Animation.easeIn(duration: 0.2))
                     }
 //                   .drawingGroup()
             }
