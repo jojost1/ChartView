@@ -6,7 +6,7 @@ public struct BarChartCell: View {
     var index: Int = 0
     var width: Float
     var numberOfDataPoints: Int
-    var animationDuration: Double
+    var animationDuration: Double = 2.0
     var gradientColor: ColorGradient
     var touchLocation: CGFloat
 
@@ -20,7 +20,7 @@ public struct BarChartCell: View {
                  index: Int = 0,
                  width: Float,
                  numberOfDataPoints: Int,
-                 animationDuration: Double,
+                 animationDuration: Double = 2.0,
                  gradientColor: ColorGradient,
                  touchLocation: CGFloat) {
         self.value = value
