@@ -6,6 +6,7 @@ public struct BarChartCell: View {
     var index: Int = 0
     var width: Float
     var numberOfDataPoints: Int
+    var animationDuration: Double
     var gradientColor: ColorGradient
     var touchLocation: CGFloat
 
@@ -46,7 +47,7 @@ public struct BarChartCell: View {
             self.firstDisplay = true
         }
         .transition(.slide)
-        .animation(Animation.spring().delay(self.touchLocation < 0 || !firstDisplay ? Double(self.index) * (2.0/Double(self.numberOfDataPoints)) : 0))
+        .animation(Animation.spring().delay(self.touchLocation < 0 || !firstDisplay ? Double(self.index) * (self.animationDuration/Double(self.numberOfDataPoints)) : 0))
     }
 }
 
