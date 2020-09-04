@@ -6,13 +6,12 @@ public struct BarChart: View, ChartBase {
 
     @EnvironmentObject var data: ChartData
     @EnvironmentObject var style: ChartStyle
-    @EnvironmentObject var animation: ChartAnimation
 
 	/// The content and behavior of the `BarChart`.
 	///
 	///
     public var body: some View {
-        BarChartRow(chartData: data, style: style, animation: animation)
+        BarChartRow(chartData: data, style: style)
     }
 
     public init() {}

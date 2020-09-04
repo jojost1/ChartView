@@ -7,12 +7,14 @@ public class ChartStyle: ObservableObject {
 	public let backgroundColor: ColorGradient
 	/// colors for foreground fill of chart
     public let foregroundColor: [ColorGradient]
+    /// animation duration of chart
+    public let animationDuration: Double
 
 	/// Initialize with a single background color and an array of `ColorGradient` for the foreground
 	/// - Parameters:
 	///   - backgroundColor: a `Color`
 	///   - foregroundColor: array of `ColorGradient`
-    public init(backgroundColor: Color, foregroundColor: [ColorGradient]) {
+    public init(backgroundColor: Color, foregroundColor: [ColorGradient], animationDuration = 2.0) {
         self.backgroundColor = ColorGradient.init(backgroundColor)
         self.foregroundColor = foregroundColor
     }
@@ -21,7 +23,7 @@ public class ChartStyle: ObservableObject {
 	/// - Parameters:
 	///   - backgroundColor: a `Color`
 	///   - foregroundColor: a `ColorGradient`
-    public init(backgroundColor: Color, foregroundColor: ColorGradient) {
+    public init(backgroundColor: Color, foregroundColor: ColorGradient, animationDuration = 2.0) {
         self.backgroundColor = ColorGradient.init(backgroundColor)
         self.foregroundColor = [foregroundColor]
     }
@@ -30,7 +32,7 @@ public class ChartStyle: ObservableObject {
 	/// - Parameters:
 	///   - backgroundColor: a `ColorGradient`
 	///   - foregroundColor: a `ColorGradient`
-    public init(backgroundColor: ColorGradient, foregroundColor: ColorGradient) {
+    public init(backgroundColor: ColorGradient, foregroundColor: ColorGradient, animationDuration = 2.0) {
         self.backgroundColor = backgroundColor
         self.foregroundColor = [foregroundColor]
     }
@@ -39,7 +41,7 @@ public class ChartStyle: ObservableObject {
 	/// - Parameters:
 	///   - backgroundColor: a `ColorGradient`
 	///   - foregroundColor: array of `ColorGradient`
-    public init(backgroundColor: ColorGradient, foregroundColor: [ColorGradient]) {
+    public init(backgroundColor: ColorGradient, foregroundColor: [ColorGradient], animationDuration = 2.0) {
         self.backgroundColor = backgroundColor
         self.foregroundColor = foregroundColor
     }
