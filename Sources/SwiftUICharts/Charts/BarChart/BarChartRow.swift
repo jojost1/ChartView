@@ -11,6 +11,7 @@ public struct BarChartRow: View {
     }
 
     var style: ChartStyle
+    var animate: Bool
     
     var maxValue: Double {
         guard let max = chartData.points.max() else {
@@ -35,7 +36,8 @@ public struct BarChartRow: View {
                                      numberOfDataPoints: self.chartData.data.count,
                                      animationDuration: self.style.animationDuration,
                                      gradientColor: self.style.foregroundColor.rotate(for: index),
-                                     touchLocation: self.touchLocation)
+                                     touchLocation: self.touchLocation,
+                                     animate: self.animate)
                             .scaleEffect(self.getScaleSize(touchLocation: self.touchLocation, index: index), anchor: .bottom)
                             .animation(Animation.easeIn(duration: 0.2))
                     }

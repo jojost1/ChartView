@@ -9,6 +9,7 @@ public struct BarChartCell: View {
     var animationDuration: Double = 2.0
     var gradientColor: ColorGradient
     var touchLocation: CGFloat
+    var animate: Bool
 
     var cellWidth: Double {
         return Double(width)/(Double(numberOfDataPoints) * 1.5)
@@ -22,7 +23,8 @@ public struct BarChartCell: View {
                  numberOfDataPoints: Int,
                  animationDuration: Double = 2.0,
                  gradientColor: ColorGradient,
-                 touchLocation: CGFloat) {
+                 touchLocation: CGFloat,
+                 animate: Bool = true) {
         self.value = value
         self.index = index
         self.width = width
@@ -30,6 +32,7 @@ public struct BarChartCell: View {
         self.animationDuration = animationDuration
         self.gradientColor = gradientColor
         self.touchLocation = touchLocation
+        self.animate = animate
     }
 
 	/// The content and behavior of the `BarChartCell`.
@@ -49,7 +52,7 @@ public struct BarChartCell: View {
             self.firstDisplay = true
         }
         .transition(.slide)
-        .animation(Animation.spring().delay(self.touchLocation < 0 || !firstDisplay ? Double(self.index) * (self.animationDuration/Double(self.numberOfDataPoints)) : 0))
+        .animation(animate ? Animation.spring().delay(self.touchLocation < 0 || !firstDisplay ? Double(self.index) * (self.animationDuration/Double(self.numberOfDataPoints)) : 0) : nil)
     }
 }
 

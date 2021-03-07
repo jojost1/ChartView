@@ -7,6 +7,7 @@ public struct Line: View {
     @ObservedObject var chartData: ChartData
 
     var style: ChartStyle
+    var animate: Bool = true
 
     @State private var showIndicator: Bool = false
     @State private var touchLocation: CGPoint = .zero
@@ -75,7 +76,6 @@ public struct Line: View {
             }
             .onAppear {
                 self.frame = geometry.frame(in: .local)
-
             }
             .onReceive(self.orientationChanged) { _ in
 				// When we receive notification here, the geometry is still the old value
@@ -139,7 +139,7 @@ extension Line {
             .rotation3DEffect(.degrees(180), axis: (x: 0, y: 1, z: 0))
             .opacity(0.2)
             .transition(.opacity)
-            .animation(.easeIn(duration: 1.6))
+            .animation(animate ? .easeIn(duration: 1.6) : nil)
     }
 
 	/// Get the view representing the line stroked in the `foregroundColor`
